@@ -1,0 +1,221 @@
+.inputPage
+    display: grid
+    grid-auto-rows: 1fr
+    width: 100%
+    overflow: hidden
+    .headline
+        font-size: 20px
+        text-transform: capitalize
+        align-self: flex-end
+    .description
+        place-self: center
+        font-size: 14px
+        text-align: justify
+        color: rgba(0, 0, 0, 0.4)
+        font-family: 'Roboto-Medium'
+    .inputField
+        align-self: center
+        display: grid
+        label
+            margin-bottom: 5px
+            font-size: 14px
+        .inputWrap
+            display: inline-flex
+            height: 35px
+            border-radius: 8px
+            padding: 2px 10px
+            margin-bottom: 15px
+            .inputText
+                border: none
+                outline: none
+                width: 100%
+                background-color: rgba(255, 255, 255, 0)
+                ::-webkit-input-placeholder
+                    color: rgba(0, 0, 0, 0.8)
+                ::-ms-input-placeholder
+                    color: rgba(0, 0, 0, 0.8)
+                ::placeholder
+                    color: rgba(0, 0, 0, 0.8)
+
+            .validIcon
+                display: grid
+                padding: 2px
+                justify-self: flex-end
+                width: 15px
+                img
+                    place-self: center
+                    width: 12px
+        .inputNormalWrap
+            border: solid 1px rgba(0, 0, 0, 0.1)
+        .inputActiveWrap
+            border: solid 1px rgba(0, 64, 138, 0.5)
+            background: rgba(0, 64, 138, 0.1)
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active
+                -webkit-box-shadow: 0 0 0 30px #e4edf8 inset !important
+        .inputErrorWrap
+            border: solid 1px rgba(255, 0, 0, 0.2)
+            background: #fcf8f8
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active
+                -webkit-box-shadow: 0 0 0 30px #fcf8f8 inset !important
+        .inputValidWrap
+            border: solid 1px rgba(2, 75, 20,0.5)
+            background: #ecf3ee
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active
+                -webkit-box-shadow: 0 0 0 30px #ecf3ee inset !important
+
+    .buttonandroute
+        align-self: center
+        display: grid
+        button
+            width: 100%
+            position: relative
+            border-radius: 5px
+            height: 35px
+            border: none
+            align-self: center
+            display: grid
+            grid-auto-flow: column
+            align-items: center
+            justify-content: center
+            transition: background .2s ease-out
+            img
+                width: 12px
+                margin-left: 5px
+        .activeButton
+            background: rgba(0, 64, 138, 0.9)
+            color: white
+            cursor: pointer
+        .disabledButton
+            background: #808080
+            color: rgba(255, 255, 255, 0.8)
+            cursor: not-allowed
+            img
+                opacity: 0.8
+        .route
+            display: inline-flex
+            place-self: center
+            font-size: 12px
+            text-align: center
+            flex-wrap: wrap
+            justify-content: center
+            padding: 10px 0px
+            .link
+                font-family: 'Roboto-Bold'
+                color: rgba(0, 64, 138, 0.9)
+                padding: 0px 2px
+                cursor: pointer
+                text-align: center
+                justify-self: center
+
+    .errorAndDots
+        display: grid
+        grid-auto-rows: auto
+        position: relative
+        .error
+            justify-self: center
+            align-self: flex-start
+            color: white
+            background-color: #fb5050
+            width: 100%
+            border-radius: 5px
+            font-size: 12px
+            display: grid
+            .container
+                display: inline-flex
+                width: 95%
+                padding: 10px
+                place-content: center
+                .text
+                    place-self: center
+                img
+                    width: 20px
+                    place-self: center
+                    margin: 0px 5px
+        .formDots
+            display: inline-flex
+            .formDot
+                height: 5px
+                border-radius: 100%
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1)
+                margin-right: 3px
+                width: 5px
+            .formDotActive
+                background: rgba(0, 64, 138, 0.9)
+            .formDotNormal
+                background: rgba(121, 121, 121, 0.9)
+
+        .formDotsAlone
+            place-self: center
+        .formDotsIfError
+            justify-self: center
+            align-self: flex-start
+
+    .dummyDiv
+        height: 78px
+    .verificationImage
+        display: grid
+        img
+            justify-self: center
+            align-self: flex-end
+            width: 50px
+            opacity: 0.9
+    .thanksText
+        font-size: 20px
+        align-self: flex-end
+        justify-self: center
+        text-transform: capitalize
+        text-align: center
+    .confirmText
+        place-self: center
+        font-size: 12px
+        color: rgba(0, 0, 0, 0.5)
+        font-family: 'Roboto-Medium'
+        display: grid
+        text-align: center
+        div
+            place-self: center
+        .userMail
+            color: rgba(0, 0, 0, 0.6)
+            font-family: 'Roboto-Bold'
+    .resend
+        display: inline-flex
+        place-self: center
+        font-size: 12px
+        text-align: center
+        flex-wrap: wrap
+        justify-content: center
+        .resendButton
+            font-family: 'Roboto-Bold'
+            color: rgba(0, 64, 138, 0.9)
+            padding: 0px 2px
+            cursor: pointer
+            text-align: center
+            justify-self: center
+
+.tick-anim-enter-active
+    animation: tickAnim .5s ease-in
+.tick-anim-leave-active
+    animation: tickAnim .2s ease-in reverse
+
+@keyframes tickAnim
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@media (min-width: 1055px)
+    .signupBackground
+        padding: 25px 80px
+
+@media (max-width: 1055px)
+    .signupBackground
+        padding: 25px 20px

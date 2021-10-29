@@ -1,0 +1,251 @@
+.container
+    display: grid
+    .main
+        display: grid
+        .images_and_selector
+            display: grid
+            grid-template-rows: min-content
+            .imageContainer
+                background: white
+                border-radius: 10px
+                box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.1)
+                display: grid
+                img
+            .imageSelector
+                display: inline-flex
+                margin-top: 20px
+                gap: 5px
+                flex-wrap: wrap
+                .image
+                    width: 50px
+                    height: 50px
+                    background: white
+                    display: flex
+                    justify-content: center
+                    padding: 10px
+                    cursor: pointer
+                    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.1)
+                    border-radius: 5px
+                    img
+                        height: 100%
+
+        .details
+            padding: 20px
+            gap: 5px
+            display: flex
+            flex-direction: column
+            .rating
+                background: #00853c
+                color: white
+                width: fit-content
+                height: fit-content
+                padding: 2px 5px
+                font-size: 12px
+                border-radius: 2px
+            .title
+                font-size: 20px
+            .price
+                display: inline-flex
+                align-items: center
+                gap: 10px
+                flex-wrap: wrap
+                .current
+                    font-size: 30px
+                    font-family: 'Roboto-Bold'
+                    color: rgba(36,36 ,36 ,0.9 )
+                .actual
+                    text-decoration: line-through
+                    color: rgba(36,36 ,36 ,0.5 )
+                .perc
+                    color: #00853c
+            .buttons
+                display: inline-flex
+                margin: 10px 0px
+                gap: 10px
+                flex-wrap: wrap
+                button
+                    font-size: 20px
+                    text-transform: uppercase
+                    padding: 5px 20px
+                    font-family: 'Roboto-Medium'
+                    color: white
+                    outline: none
+                    border: none
+                    border-radius: 2px
+                    cursor: pointer
+                    box-shadow: 0 1px 2px rgba(0,0,0,0.15)
+                    transition: all 0.1s ease-in-out
+                    &::after
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.3)
+                        transition: opacity 0.1s ease-in-out
+                    &:hover
+                        transform: scale(1.1, 1.1)
+                    &:hover::after
+                        opacity: 1
+            .addToCart
+                background: rgba(0, 64, 138, 0.9)
+            .buyNow
+                background: #00853c
+            .av_offers
+                display: grid
+                .title
+                    font-size: 15px
+                    font-family: 'Roboto-Medium'
+                    color: rgba(36,36 ,36 ,1 )
+                .offers
+                    display: inline-flex
+                    margin-top: 5px
+                    img
+                        width: 15px
+                        align-self: flex-start
+                        margin-right: 5px
+                    .offer
+                        align-self: flex-start
+                        font-size: 13px
+                        margin: 2px 0px
+                        .offer_title
+                            font-family: 'Roboto-Medium'
+                            margin-right: 5px
+                            margin-top: 0
+                        .offer_content
+                            margin-top: 0
+            .war_high_sell
+                display: grid
+                margin-top: 10px
+                font-size: 13px
+                gap: 5px 30px
+                .inner_title
+                    font-family: 'Roboto-Medium'
+                    color: rgba(36, 36, 36, 0.8)
+                .inner_content
+                    margin: 5px 0px
+                    text-align: justify
+                .highlights
+                .vLine
+                    border-left: 1px solid rgba(36, 36, 36, 0.5)
+                .war_sell
+                    .seller
+                        .seller_name
+                            color: rgba(0, 64, 138, 1)
+
+    .hLine
+        border-top: 1px solid rgba(36, 36, 36, 0.2)
+
+    .sub
+        display: grid
+        .other
+            background: white
+            padding: 20px
+            border-radius: 5px
+            display: grid
+            gap: 20px 0px
+            .info_title
+                font-size: 25px
+                font-family: "Roboto-medium"
+                color: rgba(36, 36, 36, 1)
+                text-transform: capitalize
+                padding-bottom: 10px
+            .info_item_name
+                font-family: "Roboto-medium"
+                font-size: 20px
+                color: rgba(36, 36, 36, 0.9)
+            .info_item_contents
+                display: grid
+                grid-template-columns: 1fr 2fr
+                gap: 0px 5px
+                margin-top: 10px
+                font-size: 14px
+                color: rgba(36, 36, 36, 0.9)
+                .info_item_title
+                    font-family: "Roboto-medium"
+                .info_item_content
+                    text-align: justify
+            .info_content_and_name_wrap
+                margin: 10px
+            .specifications
+
+@media ( min-width:  850px) and ( max-width:  962px)
+    .container
+        .main
+            .details
+                .war_high_sell
+                    grid-template-rows: 1fr 1fr
+                    .vLine
+                        display: none
+
+//viewport main changes
+@media ( min-width:  850px)
+    .container
+        .main
+            padding: 10px 20px
+            grid-template-columns: 1fr 2fr
+        .sub
+            padding: 20px
+@media ( max-width:  850px)
+    .container
+        .main
+            padding: 0px
+            grid-template-rows: auto 1fr
+        .sub
+            padding: 20px 0px
+
+//viewport sub changes
+@media ( min-width:  700px)
+    .container
+        .sub
+            grid-template-columns: 1fr 1fr
+@media ( max-width:  700px)
+    .container
+        .sub
+            grid-template-rows: auto 1fr
+
+@media ( min-width: 460px) and (max-width: 850px), ( min-width: 962px )
+    .container
+        .main
+            .details
+                .war_high_sell
+                    grid-template-columns: 1fr auto 1fr
+                    .vLine
+                        display: block
+
+@media (max-width: 460px)
+    .container
+        .main
+            .details
+                .war_high_sell
+                    grid-template-rows: 1fr 1fr
+                    .vLine
+                        display: none
+
+@media ( min-width:  432px)
+    .container
+        .main
+            .images_and_selector
+                justify-content: center
+                .imageContainer
+                    place-self: center
+                    height: 100%
+                    width: 400px
+                    max-height: 400px
+                    img
+                        max-height: 380px
+                        place-self: center
+                        margin: 10px
+                .imageSelector
+                    width: 400px
+
+@media ( max-width:  432px)
+    .container
+        .main
+            .images_and_selector
+                .imageContainer
+                    place-self: center
+                    height: 100%
+                    width: 100%
+                    max-height: 300px
+                    img
+                        max-height: 280px
+                        place-self: center
+                        margin: 10px
+                .imageSelector
+                    width: 100%

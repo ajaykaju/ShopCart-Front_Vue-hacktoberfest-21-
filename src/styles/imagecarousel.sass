@@ -1,0 +1,84 @@
+.slider
+    margin-top: 20px
+    margin-bottom: 10px
+    border-radius: 10px
+    position: relative
+    display: grid
+    grid-template-flow: row
+    justify-self: center
+    max-width: 1688px
+    width: 100%
+    .draggable
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 1
+    .slider_main
+        height: 250px
+        overflow: hidden
+        width: 100%
+        border-radius: 10px
+        display: grid
+        position: relative
+        img
+            position: absolute
+            border-radius: 10px
+            place-self: center
+            user-select: none
+    .slider_control_arrows
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 2
+    .slider_control_arrows
+        grid-template-rows: 1fr
+        grid-template-columns: 1fr 7fr 1fr
+        &::focus
+            color: none
+            background: none
+        .control_right, .control_left
+            place-self: center
+            padding: 2px
+            img
+                width: 35px
+                z-index: 100
+                user-select: none
+                user-drag: none
+                &:hover
+                    width: 40px
+    .slider_control_dots
+        position: absolute
+        justify-self: center
+        align-self: flex-end
+        gap: 0px 2px
+        background: rgba(0, 0, 0 ,0.4 )
+        border-radius: 5px
+        padding: 2px 4px
+        bottom: 10px
+        z-index: 1
+        display: inline-flex
+        .slide_item
+            width: fit-content
+            height: fit-content
+            background: rgba(255,255 ,255 , 0.8)
+            align-self: flex-end
+        .slide_active
+            padding: 3px 5px
+            border-radius: 5px
+        .slide_normal
+            padding: 3px
+            border-radius: 100%
+    
+@media (max-width: 732px)
+.slider
+    .slider_control_arrows
+        display: none
+    .slider_control_dots
+        display: inline-flex
+@media (min-width: 733px)
+.slider
+    .slider_control_arrows
+        display: grid
+    .slider_control_dots
+        display: none
+

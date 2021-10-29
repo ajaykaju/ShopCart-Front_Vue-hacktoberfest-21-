@@ -1,0 +1,238 @@
+@media ( min-width:  733px)
+    .side_menu_background
+        .side_menu
+            .menu_top
+                .button_and_logo
+                    .logo
+                        font-size: 25px
+            .menuTopNormal
+                .button_and_logo
+                    padding: 39px 20px
+
+@media (max-width: 732px)
+    .side_menu_background
+        .side_menu
+            .menu_top
+                .button_and_logo
+                    .logo
+                        font-size: 20px
+            .menuTopNormal
+                .button_and_logo
+                    padding: 33px 20px
+.side_menu_background
+    display: grid
+    grid-template-columns: 300px auto
+    .side_menu
+        width: 300px
+        background-color: rgba(245, 245, 245, 1)
+        opacity: 1
+        height: 100%
+        z-index: 4
+        height: 100%
+        position: fixed
+        overflow-y: scroll
+        overflow-x: hidden
+        scroll-behavior: smooth
+        &::-webkit-scrollbar
+            width: 5px
+            background: #CFD8DC
+        &::-webkit-scrollbar-track
+            border-radius: 10px
+        &::-webkit-scrollbar-thumb
+            border-radius: 10px
+            background: #90A4AE
+        .menuTopScroll
+            height: 70px
+            align-self: center
+            display: grid
+            .button_and_logo
+                padding: 10px 20px
+        .menu_top
+            background: rgba(255, 255,255 , 1)
+            .button_and_logo
+                display: inline-flex
+                width: 300px
+                .menu_button
+                    place-self: center
+                    width: 30px
+                    height: 30px
+                    transition: all .2s ease-in-out
+                    img
+                        width: 25px
+                        padding: 10px
+                    &:hover
+                        transform: scale(1.1)
+                .logo
+                    font-weight: 500
+                    place-self: center
+                    margin-left: 15px
+                    color: #rgba(35, 48, 48, 1)
+                    img
+                        width: 150px// Logo Image
+        .menu_profile
+            display: grid
+            position: relative
+            height: 100px
+            background-image: radial-gradient(circle at 0px 0px , rgba(36, 36, 36, 0.4), rgba(36, 36, 36, 1))
+            color: #ffffff
+            .login
+                place-self: center
+                width: 90%
+                display: grid
+                button
+                    font-size: 15px
+                    margin: 0px 10px
+                    background: rgba(21, 102, 196, 0.9)
+                    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2)
+                    color: white
+                    cursor: pointer
+                    border: none
+                    padding: 10px
+            .circular
+                align-self: center
+                justify-self: flex-end
+                margin-right: 10px
+                position: relative
+                width: 64px
+                height: 64px
+                .avatar
+                    border-radius: 100%
+                    width: 60px
+                    height: 60px
+                    background: rgba(255, 255, 255, 1)
+                    position: absolute
+                    left: 2px
+                    top: 2px
+                    z-index: 6
+                .circle
+                    .bar
+                        height: 100%
+                        width: 100%
+                        border-radius: 100%
+                        position: absolute
+                        clip: rect(0px, 64px, 64px, 32px)
+                        .progress
+                            position: absolute
+                            height: 100%
+                            width: 100%
+                            border-radius: 100%
+                            background: #FFD700
+                            clip: rect(0px, 32px, 64px, 0px)
+                    .left
+                        .progress
+                            z-index: 1
+                            animation: progressLeft 1s linear both
+                    .right
+                        transform: rotate(180deg)
+                        z-index: 3
+                        .progress
+                            animation: progressRight 1s linear both
+                            animation-delay: 1s
+            .user
+                align-self: center
+                display: inline-flex
+                flex-wrap: wrap
+            .userFocus
+                animation: focusUser 1.8s ease-out
+            .viewProfile
+                position: absolute
+                bottom: 10px
+                right: 10px
+                font-size: 12px
+                cursor: pointer
+        .userActive
+            grid-template-columns: 1fr 2fr
+        .menu_contents
+            padding: 20px
+            .item_top
+                display: inline-flex
+                justify-items: end
+                width: 100%
+                flex-flow: row-reverse
+                opacity: 0.8
+                img
+                    width: 15px
+            .item
+                font-size: 15px
+                display: grid
+                width: 100%
+                grid-template-columns: auto 1fr
+                padding: 10px 0px 10px 20px
+                cursor: pointer
+                border: none
+                background: transparent
+                outline: none
+                i
+                    width: 15px
+                    justify-self: end
+                    align-self: center
+                &:hover
+                    background: rgba(36, 36, 36, 0.1)
+    .outerSpace
+        background: rgba(36, 36, 36, 0.8)
+        z-index: 3
+        height: 100%
+        width: 100%
+        position: fixed
+
+.sideMenu-enter-active
+    animation: bounceEnter 1s ease-out
+.sideMenu-leave-active
+    animation: linearLeave 1s ease-in
+.outSpace-enter-active
+    animation: outSpaceOpacity 0.5s ease-out
+.outSpace-leave-active
+    animation: outSpaceOpacity 0.1s ease-in reverse
+
+.slideNormal-enter-active
+    animation: slider 0.5s ease-out
+
+@keyframes slider
+    0%
+        opacity: 0.2
+        transform: translateX(-10px)
+    60%
+        transform: translateX(10px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes linearLeave
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-2000px)
+@keyframes bounceEnter
+    0%
+        opacity: 0
+        transform: translateX(-2000px)
+    60%
+        opacity: 1
+        transform: translateX(30px)
+    80%
+        transform: translateX(-10px)
+    100%
+        transform: translateX(0)
+
+@keyframes outSpaceOpacity
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes progressLeft
+    100%
+        transform: rotate(180deg)
+@keyframes progressRight
+    100%
+        transform: rotate(180deg)
+
+@keyframes focusUser
+    0%
+        transform: translateX(-80px)
+        opacity: 0
+    80%
+        transform: translateX(2px)
+    100%
+        transform: translateX(0px)
+        opacity: 1

@@ -1,0 +1,58 @@
+.category_bar
+    display: grid
+    background: #ffffff
+    border-radius: 8px
+    padding: 5px
+    user-select: none
+    .categories
+        display: flex
+        overflow: hidden
+        flex-direction: row
+        flex-wrap: wrap
+        height: 70px
+        justify-content: center
+        .item
+            display: grid
+            grid-template-rows: 2fr 1fr
+            width: fit-content
+            img
+                width: 50px
+                place-self: center
+            .title
+                font-size: 12px
+                place-self: center
+                font-weight: bold
+    .more
+        width: fit-content
+        justify-self: right
+        border: 0px
+        cursor: pointer
+        height: 100%
+        transition: all 0.1s ease-in-out
+        img
+            width: 25px
+            place-self: center
+        &:hover
+            transform: scale(1.1,1.1)
+@media (min-width: 2175px)
+    .category_bar
+        grid-template-columns: auto
+        .more
+            display: none
+@media (max-width: 2175px)
+    .category_bar
+        grid-template-columns: auto 1fr
+        .more
+            display: grid
+@media (min-width: 733px)
+    .category_bar
+        .categories
+            gap: 0 30px
+@media (min-width: 440px) and (max-width: 732px)
+    .category_bar
+        .categories
+            gap: 0 20px
+@media (max-width: 439px)
+    .category_bar
+        .categories
+            gap: 0 15px
